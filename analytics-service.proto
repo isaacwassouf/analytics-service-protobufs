@@ -6,6 +6,7 @@ import "google/protobuf/empty.proto";
 
 service AnalyticsService {
   rpc Log(LogRequest) returns (LogResponse) {}
+  rpc ListLogs(google.protobuf.Empty) returns (ListLogsResponse) {}
 }
 
 message LogEntry {
@@ -23,5 +24,9 @@ message LogRequest {
 
 message LogResponse {
   string message = 1;
+}
+
+message ListLogsResponse {
+  repeated LogEntry logs = 1;
 }
 
