@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option go_package = "./analytics-management-service";
+
+import "google/protobuf/empty.proto";
+
+service AnalyticsService {
+  rpc Log(LogRequest) returns (LogResponse) {}
+}
+
+message LogEntry {
+  google.protobuf.Timestamp timestamp = 1;
+  string service_name = 2;
+  string level = 3;
+  string response_message = 4;
+  string metadata = 5;
+}
+
+
+message LogRequest {
+  LogEntry log_entry = 1;
+}
+
+message LogResponse {
+  string message = 1;
+}
+
