@@ -11,7 +11,7 @@ service AnalyticsService {
 }
 
 message LogEntry {
-  google.protobuf.Timestamp timestamp = 1;
+  string created_at = 1;
   string service_name = 2;
   string level = 3;
   string response_message = 4;
