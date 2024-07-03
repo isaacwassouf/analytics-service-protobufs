@@ -7,7 +7,7 @@ import "google/protobuf/timestamp.proto";
 
 service AnalyticsService {
   rpc Log(LogRequest) returns (LogResponse) {}
-  rpc ListLogs(google.protobuf.Empty) returns (ListLogsResponse) {}
+  rpc ListLogs(ListLogsRequest) returns (ListLogsResponse) {}
 }
 
 message LogEntry {
@@ -25,6 +25,19 @@ message LogRequest {
 
 message LogResponse {
   string message = 1;
+}
+
+enum Window {
+  LAST_WEEK = 0;
+  Yesterday = 1;
+  TODAY = 2;
+  LAST_MONTH = 3;
+  LAST_THREE_MONTHS = 4;
+  ALL_TIME = 5;
+}
+
+message ListLogsRequest {
+  Window window = 1;
 }
 
 message ListLogsResponse {
