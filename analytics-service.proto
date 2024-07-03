@@ -28,12 +28,12 @@ message LogResponse {
 }
 
 enum Window {
-  LAST_WEEK = 0;
-  Yesterday = 1;
+  ALL_TIME = 0;
+  YESTERDAY = 1;
   TODAY = 2;
-  LAST_MONTH = 3;
-  LAST_THREE_MONTHS = 4;
-  ALL_TIME = 5;
+  LAST_WEEK = 3;
+  LAST_MONTH = 4;
+  LAST_THREE_MONTHS = 5;
 }
 
 message ListLogsRequest {
