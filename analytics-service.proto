@@ -5,6 +5,8 @@ option go_package = "./analytics-service";
 import "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
 
+package protos;
+
 service AnalyticsService {
   rpc Log(LogRequest) returns (LogResponse) {}
   rpc ListLogs(ListLogsRequest) returns (ListLogsResponse) {}
